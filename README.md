@@ -120,7 +120,7 @@ netROC(case_dir = case_dir,
 
 ### Data Preparation
 First of all, efficient markers should be selected manually from the NetMoss result by users. Generally, we recommend a less strict threshold for the sparse network.
-Also, a medata file contains disease or health information for each sample needs to be inculded. The format should be like this:     
+Also, a metadata file contains disease or health information for each sample needs to be inculded. The format should be like this:     
 |  sample_id |   type  | study |     
 |  ------  | -----  | -----  |     
 |  SRRXXXXX  | disease | study1 |      
@@ -128,6 +128,7 @@ Also, a medata file contains disease or health information for each sample needs
 |  SRRXXXXX  | healthy | study1 |        
 |  ... ... |        |        |  
 
+### Classification
 After preparing the two files, classification can be realized using the function `netROC`:     
 ```
 marker = data.frame(result[which(result$NetMoss_Score > 0.3),])       
@@ -135,7 +136,7 @@ rownames(marker) = marker$taxon_names
 metadata = read.table("metadata.txt",header = T,sep = '\t',row.names = 1)     
 myROC = netROC(case_dir,control_dir,marker,metadata)     
 ```
-
+### Output
 The result of the classfication is a table includes true positive rate and false positive rate:     
 | threhold |  TPR  |  FPR  |      
 |  ------  | ----- | ----- |      
