@@ -145,5 +145,6 @@ The result of the classfication is a table includes true positive rate and false
 |    0.03  |  0.9  | 0.87  |        
 |  ... ... |       |       |  
 
-A combined ROC will be ploted if the parameter **plot.roc** is set to be true.     
+A combined ROC will be ploted if the parameter `plot.roc` is set to be true.     
 ![image](https://github.com/xiaolw95/NetMoss/blob/main/NetMoss_ROC.png)
+<img src="https://github.com/xiaolw95/NetMoss/blob/main/NetMoss_ROC.png" width = "50px">
