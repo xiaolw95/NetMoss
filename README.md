@@ -9,7 +9,7 @@ Here we provide a R package to acheive this goal.
 5.Classification       
 
 ## 1.Installation      
-Installation with **devtools**     
+Installation with `devtools`     
 ```
 library(devtools)
 install_github("xiaolw95/NetMoss")
@@ -33,13 +33,13 @@ NetMoss(case_dir = case_dir,
 
 We have provided a small dataset to test the function.     
 1. Download from the data directory (https://github.com/xiaolw95/NetMoss/tree/main/data) directly. 
-Or get the dataset using **git clone** commond in **Linux**:      
+Or get the dataset using `git clone` commond in `Linux`:      
 ```
 git clone https://github.com/xiaolw95/NetMoss.git     
 cd NetMoss/tests/testthat
 ```
 
-2. After getting the dataset, the NetMoss score can be easily calculated using the **NetMoss** function:       
+2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
 ```
 ##setwd('path-to-data-directory')
 case_dir = paste0(getwd(),"/case_dir")
@@ -54,7 +54,7 @@ result = NetMoss(case_dir = case_dir,
 
 ## 3.Input     
 Abundance or network matrix should be included in the directory of the input.      
-**case_dir** or **control_dir** includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
+`case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
 | taxon_names   | sample1 | sample2 | sample3 |    
 |  ---  |  ---  |  ---  |  ---  |       
 |   taxon1    |    60   |    20   |   10    |       
@@ -62,7 +62,7 @@ Abundance or network matrix should be included in the directory of the input.
 |   taxon3    |    0    |    23   |   15    |      
 |   ... ...   |         |         |         |          
 
-**net_case_dir** or **net_control_dir** includes network matrix which refers to the adjacency matrix of correltaion between the bacteria. Microbial correlation can be deduced from any tools for which [SparCC](https://github.com/bio-developer/sparcc) or [SPIEC-EASI](https://github.com/zdk123/SpiecEasi) are especially recommended.     
+`net_case_dir` or `net_control_dir` includes network matrix which refers to the adjacency matrix of correltaion between the bacteria. Microbial correlation can be deduced from any tools for which [SparCC](https://github.com/bio-developer/sparcc) or [SPIEC-EASI](https://github.com/zdk123/SpiecEasi) are especially recommended.     
 
 |          | taxon1 | taxon2 | taxon3 |      
 |  ------  | -----  | -----  | -----  |      
@@ -71,7 +71,7 @@ Abundance or network matrix should be included in the directory of the input.
 |  taxon3  |   0.5  |  0.67  |    1   |      
 |  ... ... |        |        |        |     
 
-For convenience, we also provide a **netBuild** function to build microbial networks from abundance tables.     
+For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables.     
 ```
 netBuild(case_dir = case_dir,
       control_dir = control_dir,
@@ -126,7 +126,7 @@ Also, a medata file contains disease or health information for each sample needs
 |  SRRXXXXX  | healthy | study1 |        
 |  ... ... |        |        |  
 
-After preparing the two files, classification can be realized using the function **netROC**:     
+After preparing the two files, classification can be realized using the function `netROC`:     
 ```
 marker = data.frame(result[which(result$NetMoss_Score > 0.3),])       
 rownames(marker) = marker$taxon_names        
