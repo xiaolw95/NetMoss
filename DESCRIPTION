@@ -1,0 +1,32 @@
+Package: NetMoss
+Title: Identify Differential Bacteria from Network
+Version: 0.1.0
+Authors@R: 
+    c(
+	person("Liwen","Xiao",role = c("aut","cre"), email = 'xiaolw95@163.com'),
+	person("Fengyi","Zhang",role = "aut")
+	)
+Description: This is a package to identify differential bacteria between case and control data set based on network.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    yaml,
+    coin
+Depends: 
+    igraph,
+    WGCNA,
+    ggplot2,
+    reshape2,
+    doBy,
+    WeightedROC,
+    pROC,
+    plotROC,
+    randomForest,
+    psych,
+    rsparcc
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+LazyData: yes
