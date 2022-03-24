@@ -1,15 +1,13 @@
 # NetMoss   
-****
 NetMoss is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.    
 Here we provide a R package to acheive this goal.     
 
 ## Contents  
-****
-- [Installation](#installation)     
-- [Basic Usage](#basic-usage)     
-- [Input](#input)     
-- [Output](#output)     
-- [Classification](#classification)           
+1.- [Installation](#installation)     
+2.- [Basic Usage](#basic-usage)     
+3.- [Input](#input)     
+4.- [Output](#output)     
+5.- [Classification](#classification)           
 
 ## Installation    
 Installation with `devtools`     
