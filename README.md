@@ -36,7 +36,7 @@ We have provided a small dataset to test the function.
 Or get the dataset using `git clone` commond in `Linux`:      
 ```
 git clone https://github.com/xiaolw95/NetMoss.git     
-cd NetMoss/tests/testthat
+cd NetMoss/data
 ```
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
