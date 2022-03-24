@@ -1,16 +1,17 @@
-# NetMoss      
+# NetMoss   
+****
 NetMoss is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.    
 Here we provide a R package to acheive this goal.     
 
-## Contents     
+## Contents  
+****
 - [Installation](#installation)     
 - [Basic Usage](#basic-usage)     
 - [Input](#input)     
 - [Output](#output)     
 - [Classification](#classification)           
 
-### Installation    
-****
+## Installation    
 Installation with `devtools`     
 ```
 library(devtools)
@@ -18,7 +19,7 @@ install_github("xiaolw95/NetMoss")
 library(NetMoss)
 ```
 
-### Basic Usage     
+## Basic Usage     
 The NetMoss function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories as follows:      
 ```
 NetMoss(case_dir = case_dir,    
@@ -54,7 +55,7 @@ result = NetMoss(case_dir = case_dir,
         net_control_dir = net_control_dir) 
 ```   
 
-### Input     
+## Input     
 Abundance or network matrix should be included in the directory of the input.    
 
 ##### Abundance Table
@@ -90,7 +91,7 @@ netBuild(case_dir = case_dir,
 **net_control_dir:**  the directory of control network datasets.    
 **method:** the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
 
-### Output
+## Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
 | taxon_names | control_mod | case_mod | NetMoss_score |      
 |  ------  | -----  | -----  | -----  |      
@@ -104,7 +105,7 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 **case_mod:**  the case module of the bacteria belongs to.     
 **NetMoss_score:**  the NetMoss of the bacteria gets.      
 
-### Classification       
+## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
 ```
 netROC(case_dir = case_dir,
