@@ -9,7 +9,8 @@ Here we provide a R package to acheive this goal.
 - [Output](#output)     
 - [Classification](#classification)           
 
-### Installation      
+### Installation    
+****
 Installation with `devtools`     
 ```
 library(devtools)
