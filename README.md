@@ -2,14 +2,14 @@
 NetMoss is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.    
 Here we provide a R package to acheive this goal.     
 
-# Contents     
+## Contents     
 - [Installation](#installation)     
 - [Basic Usage](#basic-usage)     
 - [Input](#input)     
 - [Output](#output)     
 - [Classification](#classification)           
 
-## Installation      
+### Installation      
 Installation with `devtools`     
 ```
 library(devtools)
@@ -17,7 +17,7 @@ install_github("xiaolw95/NetMoss")
 library(NetMoss)
 ```
 
-## Basic Usage     
+### Basic Usage     
 The NetMoss function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories as follows:      
 ```
 NetMoss(case_dir = case_dir,    
@@ -53,9 +53,10 @@ result = NetMoss(case_dir = case_dir,
         net_control_dir = net_control_dir) 
 ```   
 
-## Input     
+### Input     
 Abundance or network matrix should be included in the directory of the input.    
-### Abundance Table
+
+##### Abundance Table
 `case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
 | taxon_names   | sample1 | sample2 | sample3 |    
 |  ---  |  ---  |  ---  |  ---  |       
@@ -64,7 +65,7 @@ Abundance or network matrix should be included in the directory of the input.
 |   taxon3    |    0    |    23   |   15    |      
 |   ... ...   |         |         |         |          
 
-### Network Matrix
+##### Network Matrix
 `net_case_dir` or `net_control_dir` includes network matrix which refers to the adjacency matrix of correltaion between the bacteria. Microbial correlation can be deduced from any tools for which [SparCC](https://github.com/bio-developer/sparcc) or [SPIEC-EASI](https://github.com/zdk123/SpiecEasi) are especially recommended.     
 
 |          | taxon1 | taxon2 | taxon3 |      
@@ -88,7 +89,7 @@ netBuild(case_dir = case_dir,
 **net_control_dir:**  the directory of control network datasets.    
 **method:** the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
 
-## Output
+### Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
 | taxon_names | control_mod | case_mod | NetMoss_score |      
 |  ------  | -----  | -----  | -----  |      
@@ -102,7 +103,7 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 **case_mod:**  the case module of the bacteria belongs to.     
 **NetMoss_score:**  the NetMoss of the bacteria gets.      
 
-## Classification       
+### Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
 ```
 netROC(case_dir = case_dir,
