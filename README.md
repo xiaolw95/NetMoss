@@ -3,11 +3,11 @@ NetMoss is a tool developed for integrating large-scale data and identifying dis
 Here we provide a R package to acheive this goal.     
 
 ## Contents  
-1.- [Installation](#installation)     
-2.- [Basic Usage](#basic-usage)     
-3.- [Input](#input)     
-4.- [Output](#output)     
-5.- [Classification](#classification)           
+- 1.[Installation](#installation)     
+- 2.[Basic Usage](#basic-usage)     
+- 3.[Input](#input)     
+- 4.[Output](#output)     
+- 5.[Classification](#classification)           
 
 ## Installation    
 Installation with `devtools`     
