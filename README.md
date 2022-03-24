@@ -73,7 +73,7 @@ Abundance or network matrix should be included in the directory of the input.
 |  taxon3  |   0.5  |  0.67  |    1   |      
 |  ... ... |        |        |        |     
 
-For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables.     
+For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables) and network directories (empty). Network matrix will be output to the network directories automatically.      
 ```
 netBuild(case_dir = case_dir,
       control_dir = control_dir,
