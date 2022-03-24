@@ -32,7 +32,7 @@ NetMoss(case_dir = case_dir,
 **minModuleSize:**  Minimum module size which is set to 20 by default. The greater it is, the more elements are included in one module.
 
 We have provided a small dataset to test the function.     
-1. Download from the testthat directory (https://github.com/xiaolw95/NetMoss/tree/main/tests/testthat) directly. 
+1. Download from the data directory (https://github.com/xiaolw95/NetMoss/tree/main/data) directly. 
 Or get the dataset using **git clone** commond in **Linux**:      
 ```
 git clone https://github.com/xiaolw95/NetMoss.git     
@@ -41,7 +41,7 @@ cd NetMoss/tests/testthat
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the **NetMoss** function:       
 ```
-##setwd('path-to-testthat-directory')
+##setwd('path-to-data-directory')
 case_dir = paste0(getwd(),"/case_dir")
 control_dir = paste0(getwd(),"/control_dir")
 net_case_dir = paste0(getwd(),"/net_case_dir")
@@ -70,7 +70,21 @@ Abundance or network matrix should be included in the directory of the input.
 |  taxon2  |  -0.3  |    1   |  0.67  |      
 |  taxon3  |   0.5  |  0.67  |    1   |      
 |  ... ... |        |        |        |     
- 
+
+For convenience, we also provide a **netBuild** function to build microbial networks from abundance tables.     
+```
+netBuild(case_dir = case_dir,
+      control_dir = control_dir,
+      net_case_dir = net_case_dir,
+      net_control_dir = net_control_dir,
+      method = "sparcc")
+```
+**case_dir:**  the directory of case datasets.      
+**control_dir:**  the directory of control datasets.       
+**net_case_dir:**  the directory of case network datasets.        
+**net_control_dir:**  the directory of control network datasets.    
+**method:** the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
+
 ## 4.Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
 | taxon_names | control_mod | case_mod | NetMoss_score |      
@@ -129,4 +143,4 @@ The result of the classfication is a table includes true positive rate and false
 |  ... ... |       |       |  
 
 A combined ROC will be ploted if the parameter **plot.roc** is set to be true.     
-
+![image](https://github.com/xiaolw95/NetMoss/blob/main/NetMoss_ROC.png)
