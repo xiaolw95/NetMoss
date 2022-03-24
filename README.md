@@ -4,12 +4,12 @@ Here we provide a R package to acheive this goal.
 
 # Contents     
 - [Installation](#installation)     
-- [Basic Usage](#basic usage)     
+- [Basic Usage](#basic-usage)     
 - [Input](#input)     
 - [Output](#output)     
 - [Classification](#classification)           
 
-## 1.Installation      
+## Installation      
 Installation with `devtools`     
 ```
 library(devtools)
@@ -17,7 +17,7 @@ install_github("xiaolw95/NetMoss")
 library(NetMoss)
 ```
 
-## 2.Basic Usage     
+## Basic Usage     
 The NetMoss function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories as follows:      
 ```
 NetMoss(case_dir = case_dir,    
@@ -53,7 +53,7 @@ result = NetMoss(case_dir = case_dir,
         net_control_dir = net_control_dir) 
 ```   
 
-## 3.Input     
+## Input     
 Abundance or network matrix should be included in the directory of the input.    
 ### Abundance Table
 `case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
@@ -88,7 +88,7 @@ netBuild(case_dir = case_dir,
 **net_control_dir:**  the directory of control network datasets.    
 **method:** the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
 
-## 4.Output
+## Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
 | taxon_names | control_mod | case_mod | NetMoss_score |      
 |  ------  | -----  | -----  | -----  |      
@@ -102,7 +102,7 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 **case_mod:**  the case module of the bacteria belongs to.     
 **NetMoss_score:**  the NetMoss of the bacteria gets.      
 
-## 5. Classification       
+## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
 ```
 netROC(case_dir = case_dir,
@@ -119,7 +119,6 @@ netROC(case_dir = case_dir,
 **plot.roc:**  a logical parameter. If TRUE then the combined ROC of the result of classification will be plotted.     
 **train.num:**  a numerical parameter which refers to trainning times of the model. By default, it is set to 20.        
 
-### Data Preparation
 First of all, efficient markers should be selected manually from the NetMoss result by users. Generally, we recommend a less strict threshold for the sparse network.
 Also, a metadata file contains disease or health information for each sample needs to be inculded. The format should be like this:     
 |  sample_id |   type  | study |     
@@ -129,7 +128,6 @@ Also, a metadata file contains disease or health information for each sample nee
 |  SRRXXXXX  | healthy | study1 |        
 |  ... ... |        |        |  
 
-### Classification
 After preparing the two files, classification can be realized using the function `netROC`:     
 ```
 marker = data.frame(result[which(result$NetMoss_Score > 0.3),])       
@@ -137,7 +135,7 @@ rownames(marker) = marker$taxon_names
 metadata = read.table("metadata.txt",header = T,sep = '\t',row.names = 1)     
 myROC = netROC(case_dir,control_dir,marker,metadata)     
 ```
-### Output
+
 The result of the classfication is a table includes true positive rate and false positive rate:     
 | threhold |  TPR  |  FPR  |      
 |  ------  | ----- | ----- |      
