@@ -53,7 +53,8 @@ result = NetMoss(case_dir = case_dir,
 ```   
 
 ## 3.Input     
-Abundance or network matrix should be included in the directory of the input.      
+Abundance or network matrix should be included in the directory of the input.    
+### Abundance Table
 `case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
 | taxon_names   | sample1 | sample2 | sample3 |    
 |  ---  |  ---  |  ---  |  ---  |       
@@ -62,6 +63,7 @@ Abundance or network matrix should be included in the directory of the input.
 |   taxon3    |    0    |    23   |   15    |      
 |   ... ...   |         |         |         |          
 
+### Network Matrix
 `net_case_dir` or `net_control_dir` includes network matrix which refers to the adjacency matrix of correltaion between the bacteria. Microbial correlation can be deduced from any tools for which [SparCC](https://github.com/bio-developer/sparcc) or [SPIEC-EASI](https://github.com/zdk123/SpiecEasi) are especially recommended.     
 
 |          | taxon1 | taxon2 | taxon3 |      
