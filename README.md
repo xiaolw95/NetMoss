@@ -26,11 +26,11 @@ NetMoss(case_dir = case_dir,
         net_control_dir = net_control_dir,   
         minModuleSize = 20)   
 ```
-**case_dir:**  the directory of case datasets.     
-**control_dir:**  the directory of control datasets.      
-**net_case_dir:**  the directory of case network datasets.      
-**net_control_dir:**  the directory of control network datasets.      
-**minModuleSize:**  Minimum module size which is set to 20 by default. The greater it is, the more elements are included in one module.
+`case_dir:`  the directory of case datasets.     
+`control_dir:`  the directory of control datasets.      
+`net_case_dir:`  the directory of case network datasets.      
+`net_control_dir:`  the directory of control network datasets.      
+`minModuleSize:`  Minimum module size which is set to 20 by default. The greater it is, the more elements are included in one module.
 
 We have provided a small dataset to test the function.     
 1. Download from the data directory (https://github.com/xiaolw95/NetMoss/tree/main/data) directly. 
@@ -83,11 +83,11 @@ netBuild(case_dir = case_dir,
       net_control_dir = net_control_dir,
       method = "sparcc")
 ```
-**case_dir:**  the directory of case datasets.      
-**control_dir:**  the directory of control datasets.       
-**net_case_dir:**  the directory of case network datasets.        
-**net_control_dir:**  the directory of control network datasets.    
-**method:** the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
+`case_dir:`  the directory of case datasets.      
+`control_dir:`  the directory of control datasets.       
+`net_case_dir:`  the directory of case network datasets.        
+`net_control_dir:`  the directory of control network datasets.    
+`method:` the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
 
 ## Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
@@ -98,10 +98,10 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 |    taxon3   |    3     |      2     |      0.32     |      
 |    ... ...  |        |        |        |       
 
-**taxon_names:** the name of the bacteria.      
-**control_mod:**  the control module of the bacteria belongs to.      
-**case_mod:**  the case module of the bacteria belongs to.     
-**NetMoss_score:**  the NetMoss of the bacteria gets.      
+`taxon_names:` the name of the bacteria.      
+`control_mod:`  the control module of the bacteria belongs to.      
+`case_mod:`  the case module of the bacteria belongs to.     
+`NetMoss_score:`  the NetMoss of the bacteria gets.      
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
@@ -113,12 +113,12 @@ netROC(case_dir = case_dir,
       plot.roc = T,
       train.num = 20)
 ```
-**case_dir:** the directory of case datasets.     
-**control_dir:** the directory of control datasets.    
-**marker:** a table of combined markers identified by NetMoss.     
-**metadata:**  a table of clinical informations for all studies.     
-**plot.roc:**  a logical parameter. If TRUE then the combined ROC of the result of classification will be plotted.     
-**train.num:**  a numerical parameter which refers to trainning times of the model. By default, it is set to 20.        
+`case_dir:` the directory of case datasets.     
+`control_dir:` the directory of control datasets.    
+`marker:` a table of combined markers identified by NetMoss.     
+`metadata:`  a table of clinical informations for all studies.     
+`plot.roc:`  a logical parameter. If TRUE then the combined ROC of the result of classification will be plotted.     
+`train.num:`  a numerical parameter which refers to trainning times of the model. By default, it is set to 20.        
 
 First of all, efficient markers should be selected manually from the NetMoss result by users. Generally, we recommend a less strict threshold for the sparse network.
 Also, a metadata file contains disease or health information for each sample needs to be inculded. The format should be like this:     
