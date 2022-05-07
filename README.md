@@ -2,8 +2,11 @@
 NetMoss is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.    
 Here we provide a R package to acheive this goal.     
 
-NetMoss2 now is available! See https://github.com/xiaolw95/NetMoss2      
-Additional function has been added in this new version
+`NetMoss2` now is available! See https://github.com/xiaolw95/NetMoss2      
+Additional function has been added in this new version:
+1. Single file is supported as input.   
+2. Network can be constructed automatically from abundance matrix.   
+3. NetMoss results are visualized as paired networks.   
 
 ## Contents  
 - [Installation](#installation)     
@@ -76,21 +79,7 @@ Abundance or network matrix should be included in the directory of the input.
 |  taxon1  |    1   |  -0.3  |  0.5   |      
 |  taxon2  |  -0.3  |    1   |  0.67  |      
 |  taxon3  |   0.5  |  0.67  |    1   |      
-|  ... ... |        |        |        |     
-
-For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables) and network directories (empty). Network matrix will be output to the network directories automatically.      
-```
-netBuild(case_dir = case_dir,
-      control_dir = control_dir,
-      net_case_dir = net_case_dir,
-      net_control_dir = net_control_dir,
-      method = "sparcc")
-```
-`case_dir:`  the directory of case datasets.      
-`control_dir:`  the directory of control datasets.       
-`net_case_dir:`  the directory of case network datasets.        
-`net_control_dir:`  the directory of control network datasets.    
-`method:` the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
+|  ... ... |        |        |        |        
 
 ## Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
