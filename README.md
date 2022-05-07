@@ -34,14 +34,12 @@ The NetMoss function is used to calculate NetMoss score of significant bacteria 
 NetMoss(case_dir = case_dir,    
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
-        net_control_dir = net_control_dir,   
-        minModuleSize = 20)   
+        net_control_dir = net_control_dir)   
 ```
 `case_dir:`  the directory of case datasets.     
 `control_dir:`  the directory of control datasets.      
 `net_case_dir:`  the directory of case network datasets.      
 `net_control_dir:`  the directory of control network datasets.      
-`minModuleSize:`  Minimum module size which is set to 20 by default. The greater it is, the more elements are included in one module.
 
 We have provided a small dataset to test the function.     
 1. Download from the data directory (https://github.com/xiaolw95/NetMoss/tree/main/data) directly. 
