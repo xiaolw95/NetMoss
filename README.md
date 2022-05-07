@@ -2,7 +2,7 @@
 NetMoss is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.    
 Here we provide a R package to acheive this goal.     
 
-`NetMoss2` now is available! See https://github.com/xiaolw95/NetMoss2      
+[NetMoss2](https://github.com/xiaolw95/NetMoss2) now is available!       
 Additional function has been added in this new version:
 1. Single file is supported as input.   
 2. Network can be constructed automatically from abundance matrix.   
