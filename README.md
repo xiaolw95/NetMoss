@@ -6,7 +6,8 @@ Here we provide a R package to acheive this goal.
 Additional function has been added in this new version:
 1. Single file is supported as input.   
 2. Network can be constructed automatically from abundance matrix.   
-3. NetMoss results are visualized as paired networks.   
+3. A P value is provided for each NetMoss score.   
+4. NetMoss results are visualized as paired networks.   
 
 ## Contents  
 - [Installation](#installation)     
