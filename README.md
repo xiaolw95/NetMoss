@@ -1,6 +1,6 @@
 # NetMoss   
 [NetMoss2](https://github.com/xiaolw95/NetMoss2) now is available!       
-Additional function has been added in this new version:
+Additional functions have been added in this new version:
 1. Single file is supported as input.   
 2. Network can be constructed automatically from abundance matrix.   
 3. A P value is provided for each NetMoss score.   
